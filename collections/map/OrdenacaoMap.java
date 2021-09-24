@@ -14,7 +14,7 @@ import java.util.TreeSet;
  * crie um dicionario e ordene este dicionário:
  * exibindo (Nome Autor (String) - Nome Livro (Livro)*/
 
-public class Ordenacao {
+public class OrdenacaoMap {
 	public static void main(String[] args) {
 		
 		
