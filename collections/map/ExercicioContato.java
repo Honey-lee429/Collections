@@ -7,6 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.function.Function;
+import java.util.function.ToIntFunction;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -48,19 +50,39 @@ public class ExercicioContato {
 					System.out.println(entry);
 				}
 		  
-		  System.out.println("\n--\tOrdem número telefone\t--"); 
-		  		Set<Map.Entry<Integer, Contato>> number = new TreeSet<>(new ComparatorNumero());
+		  System.out.println("\n--\tOrdem número telefone com classe anônima\t--"); 
+		  		Set<Map.Entry<Integer, Contato>> number = new TreeSet<>(new Comparator<Map.Entry<Integer, Contato>>() {
+
+					@Override
+					public int compare(Entry<Integer, Contato> o1, Entry<Integer, Contato> o2) {
+						return Integer.compare(o1.getValue().getNumero(), o2.getValue().getNumero());
+					}
+			
+				});
 		  		number.addAll(contato.entrySet());
 		  		for (Entry<Integer, Contato> entry : number) {
 					System.out.println(entry);
 				}
 		  		
-		System.out.println("\n--\tOrdem nome contato\t--");	
-				Set<Map.Entry<Integer, Contato>> name = new TreeSet<>(new ComparatorName());
+		System.out.println("\n--\tOrdem nome contato com function\t--");	
+				Set<Map.Entry<Integer, Contato>> name = new TreeSet<>(Comparator.comparing(new Function<Map.Entry<Integer, Contato>, String>() {
+
+					@Override
+					public String apply(Entry<Integer, Contato> t) {
+						return t.getValue().getNome();
+					}
+				}));
 		  		name.addAll(number);
 		  		for (Entry<Integer, Contato> entry : name) {
 					System.out.println(entry);
 				}
+		  		
+  		System.out.println("\n--\tOrdem nome contato com lambda\t--"); 		
+  		Set<Map.Entry<Integer, Contato>> name1 = new TreeSet<>(Comparator.comparing(contatinhos -> contatinhos.getValue().getNome()));
+  		name.addAll(number);
+  		for (Entry<Integer, Contato> entry : name) {
+			System.out.println(entry);
+		}
 	}
 }
 
@@ -103,20 +125,20 @@ class Contato {
 
 
 
-class ComparatorNumero implements Comparator<Map.Entry<Integer, Contato>> {
+/*class ComparatorNumero implements Comparator<Map.Entry<Integer, Contato>> {
 
 	@Override
 	public int compare(Entry<Integer, Contato> o1, Entry<Integer, Contato> o2) {
 		return Integer.compare(o1.getValue().getNumero(), o2.getValue().getNumero());
 	}	
 }
+*/
 
-
-class ComparatorName implements Comparator<Map.Entry<Integer, Contato>> {
+/*class ComparatorName implements Comparator<Map.Entry<Integer, Contato>> {
 
 	@Override
 	public int compare(Entry<Integer, Contato> o1, Entry<Integer, Contato> o2) {
 		return o1.getValue().getNome().compareToIgnoreCase(o2.getValue().getNome());
 	}
 	
-}
+*/
