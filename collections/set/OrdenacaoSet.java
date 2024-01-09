@@ -7,14 +7,14 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
-/*Dadas as seguintes informaÁıes sobre minhas sÈrias favoritas,
- * crie um cj e ordene este conjunto exibindo: (nome - genero = tempo de episÛdio)
+/*Dadas as seguintes informa√ß√µes sobre minhas s√©rias favoritas,
+ * crie um cj e ordene este conjunto exibindo: (nome - genero = tempo de epis√≥dio)
  */
 
 public class OrdenacaoSet {
 	public static void main(String[] args) {
 		
-		System.out.println("--\tOrdem AleatÛria\t--");
+		System.out.println("--\tOrdem Aleat√≥ria, n√£o imprime valores repetidos\t--");
 		Set<Serie> minhasSeries = new HashSet<>(){{
 			add(new Serie("chess","criatividade", 60));
 			add(new Serie("peaky brinders","policia", 80));
@@ -28,7 +28,7 @@ public class OrdenacaoSet {
 	    			+ serie.getTempoEpisodio());
 	    }	
 		
-		System.out.println("\n--\tOrdem inserÁ„o\t--");
+		System.out.println("\n--\tOrdem inser√ß√£o\t--");
 		Set<Serie> minhasSeries1 = new LinkedHashSet<>() {{
 			add(new Serie("chess","criatividade", 60));
 			add(new Serie("peaky brinders","policia", 80));
@@ -43,7 +43,7 @@ public class OrdenacaoSet {
 		
 		System.out.println("\n--\tOrdem crescente (tempoEpisodio)\t--");
 		Set<Serie> minhasSeries2 = new TreeSet<>(minhasSeries1); //precisa implementar interface Comparable na classe Serie para funcionar
-		for (Serie serie : minhasSeries2) { //para imprimir os dois tempoEpisodio iguais, devemos trat·-la dentro do compareTo da Classe Serie
+		for (Serie serie : minhasSeries2) { //para imprimir os dois tempoEpisodio iguais, devemos trat√°-la dentro do compareTo da Classe Serie
 			System.out.println(serie.getNome() + " - "
 	    			+ serie.getGenero() + " - " 
 	    			+ serie.getTempoEpisodio());
@@ -133,7 +133,7 @@ class Serie implements Comparable<Serie> {
 
 	@Override
 	public int compareTo(Serie o) {
-		//como o set n„o recebe objetos iguais, deveos tratar aqui
+		//como o set n√£o recebe objetos iguais, deveos tratar aqui
 		
 		int tempoEpisodio = Integer.compare(this.getTempoEpisodio(), o.getTempoEpisodio());
 		if(tempoEpisodio != 0) {
