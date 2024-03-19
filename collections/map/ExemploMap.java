@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-/*Daa os modelos dos carros e seus respectivos consumos na estrada, faÁa:
+/*Daa os modelos dos carros e seus respectivos consumos na estrada, fa√ßa:
  * modelo = gol - consumo = 14,4 km/l
  * modelo = uno - consumo = 15,6 km/l
  * modelo = mobi - consumo = 16,1 km/l
@@ -18,7 +18,7 @@ import java.util.TreeMap;
  * */
 public class ExemploMap {
 	public static void main(String[] args) {
-		System.out.println("forma aleatÛria");
+		System.out.println("forma aleat√≥ria");
 		Map<String, Double> carrosPopulares = new HashMap<>() {{
 			put("gol", 14.4);
 			put("uno", 15.6);
@@ -40,25 +40,26 @@ public class ExemploMap {
 		System.out.println(carrosPopulares1.toString());
 		
 		
-		System.out.println("\nExiba o dicion·rio ordenado em ordem alfabÈtica: ");
+		System.out.println("\nExiba o dicion√°rio ordenado em ordem alfab√©tica: ");
 		Map<String, Double> carrosPopulares2 = new TreeMap<>(carrosPopulares1);
 		System.out.println(carrosPopulares2);
 		
 		System.out.println("\nSubstitua o consumo do gol por 15,2km/l");
+		//if the key is already in the map, the value is overwritten.
 		carrosPopulares.put("gol", 15.2);
 		System.out.println(carrosPopulares);
 		
-		System.out.println("\nconfira se o modelo tucson est· no dicion·rio: " + carrosPopulares.containsKey("tucson"));
+		System.out.println("\nconfira se o modelo tucson est√° no dicion√°rio: " + carrosPopulares.containsKey("tucson"));
 		
 		System.out.println("\nExiba o consumodo uno: " + carrosPopulares.get("uno"));
 		
-		//System.out.println("Exiba o terceiro modelo adicionado: "); // como no set n„o temos como pegar este valor
+		//System.out.println("Exiba o terceiro modelo adicionado: "); // como no set n√£o temos como pegar este valor
 		
 		System.out.println("\nExiba os modelos: " + carrosPopulares.keySet());
 		
 		System.out.println("\nExia os consumos dos carros: " + carrosPopulares.values());
 		
-		System.out.println("\nExiba o modelo mais econÙmico e seu consumo");
+		System.out.println("\nExiba o modelo mais econ√¥mico e seu consumo");
 		Double consumoMaisEficiente = Collections.max(carrosPopulares.values());
 		Set<Entry<String, Double>> entrySet = carrosPopulares.entrySet();
 		String modeloMaisEficiente = "";
@@ -71,7 +72,7 @@ public class ExemploMap {
 		System.out.println(modeloMaisEficiente + ", consumo de " + consumoMaisEficiente);
 		
 		
-		System.out.println("\nExiba o modelo menos econÙmico e seu consumo: ");
+		System.out.println("\nExiba o modelo menos econ√¥mico e seu consumo: ");
 		Double menosEficiente = Collections.min(carrosPopulares.values());
 		String modeloMenosEficiente = "";
 		
@@ -90,7 +91,7 @@ public class ExemploMap {
 		}
 		System.out.println("\nExiba a soma dos consumos: " + soma);
 		
-		System.out.println("\nExiba a mÈdia dos consumos deste dicion·rio de carros: " + soma/carrosPopulares.size());
+		System.out.println("\nExiba a m√©dia dos consumos deste dicion√°rio de carros: " + soma/carrosPopulares.size());
 		
 		
 		Iterator<Double> iterator1 = carrosPopulares.values().iterator();
@@ -103,10 +104,10 @@ public class ExemploMap {
 		
 		
 		carrosPopulares.clear();
-		System.out.println("\nApague o dicion·rio de carros: " + carrosPopulares);
+		System.out.println("\nApague o dicion√°rio de carros: " + carrosPopulares);
 		
 		
-		System.out.println("\nA lista est· vazia: " + carrosPopulares.isEmpty());
+		System.out.println("\nA lista est√° vazia: " + carrosPopulares.isEmpty());
 			
 	}
 }
