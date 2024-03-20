@@ -21,11 +21,21 @@ Map: Cada elemento contém, na verdade, dois objetos: uma chave e um valor. Valo
   classe Properties, que é utilizada para armazenar configurações e propriedades de um sistema.
 
   Implementações
-ArrayList: Funciona como um array que pode crescer em tamanho. A busca por um elemento é rápida, mas a inserção e a exclusão de elementos   são mais lentas e proporcionais ao tamanho da estrutura. É a escolha ideal quando o acesso rápido aos elementos é prioritário. Por        exemplo, ao criar um catálogo de sua biblioteca pessoal, onde cada livro recebe um número sequencial para acesso.
-LinkedList: Implementa uma lista ligada, em que cada nó contém dados e uma referência para o próximo nó. Ao contrário do ArrayList, a       busca é mais lenta, mas as inserções e exclusões são rápidas. Portanto, prefira LinkedList quando houver a necessidade frequente de       inserir e excluir itens, como ao gerenciar compras mensais de supermercado.
-HashSet: Oferece acesso rápido aos dados, mas não garante que eles estejam ordenados. É a escolha adequada quando a solução requer          elementos únicos, e a ordem não é relevante. Por exemplo, ao criar um catálogo de suas músicas.
-TreeSet: Os dados são ordenados, mas o acesso é mais lento que no HashSet. Use TreeSet quando for necessário um conjunto de elementos       únicos em ordem natural. É recomendado para as mesmas aplicações do HashSet, com a vantagem da ordenação natural.
-LinkedHashSet: Derivado do HashSet, mantém uma lista duplamente ligada de seus elementos. Os elementos são iterados na ordem de inserção     ou na ordem em que foram acessados na última iteração. É útil para registrar a chegada de corredores em uma maratona.
-HashMap: Baseado em tabela de espalhamento, permite chaves e valores nulos. Não garante ordenação dos dados. Escolha quando a ordenação     não é relevante e é necessário um identificador, como o ISBN em um catálogo de biblioteca pessoal.
-TreeMap: Implementa SortedMap e garante a ordenação ascendente das chaves. Pode especificar uma ordem personalizada. Use quando precisar     de um mapa ordenado. Similar ao HashMap, mas com menor desempenho.
-LinkedHashMap: Mantém uma lista duplamente ligada de elementos, com iteração na ordem de inserção das chaves. Útil quando a ordem de       inserção é importante, como registrar corredores em uma maratona.
+ArrayList: Funciona como um array que pode crescer em tamanho. A busca por um elemento é rápida, mas a inserção e a exclusão de 
+  elementos são mais lentas e proporcionais ao tamanho da estrutura. É a escolha ideal quando o acesso rápido aos elementos é prioritário.
+  Por exemplo, ao criar um catálogo de sua biblioteca pessoal, onde cada livro recebe um número sequencial para acesso.
+LinkedList: Implementa uma lista ligada, em que cada nó contém dados e uma referência para o próximo nó. Ao contrário do ArrayList, a busca é 
+  mais lenta, mas as inserções e exclusões são rápidas. Portanto, prefira LinkedList quando houver a necessidade frequente de inserir e excluir 
+  itens, como ao gerenciar compras mensais de supermercado.
+HashSet: Oferece acesso rápido aos dados, mas não garante que eles estejam ordenados. É a escolha adequada quando a solução requer elementos únicos, 
+  e a ordem não é relevante. Por exemplo, ao criar um catálogo de suas músicas.
+TreeSet: Os dados são ordenados, mas o acesso é mais lento que no HashSet. Use TreeSet quando for necessário um conjunto de elementos únicos em ordem
+  natural. É recomendado para as mesmas aplicações do HashSet, com a vantagem da ordenação natural.
+LinkedHashSet: Derivado do HashSet, mantém uma lista duplamente ligada de seus elementos. Os elementos são iterados na ordem de inserção ou na ordem em 
+  que foram acessados na última iteração. É útil para registrar a chegada de corredores em uma maratona.
+HashMap: Baseado em tabela de espalhamento, permite chaves e valores nulos. Não garante ordenação dos dados. Escolha quando a ordenação não é relevante
+  e é necessário um identificador, como o ISBN em um catálogo de biblioteca pessoal.
+TreeMap: Implementa SortedMap e garante a ordenação ascendente das chaves. Pode especificar uma ordem personalizada. Use quando precisar de um mapa ordenado. 
+  Similar ao HashMap, mas com menor desempenho.
+LinkedHashMap: Mantém uma lista duplamente ligada de elementos, com iteração na ordem de inserção das chaves. Útil quando a ordem de inserção é importante,
+  como registrar corredores em uma maratona.
